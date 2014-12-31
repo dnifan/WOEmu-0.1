@@ -1,0 +1,5 @@
+Hi there, these directories contain all the game logic of WOEmu.
+A reference:
+
+Objects			-  Contains scripted in-game objects.
+Game			-  Contains miscellaneous game logic stuff.

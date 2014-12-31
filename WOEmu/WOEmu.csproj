@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88246E52-2CD3-4F38-98C7-2F01CD1ECF6B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WOEmu</RootNamespace>
+    <AssemblyName>WOEmu</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boo.Lang, Version=2.0.0.0, Culture=neutral, PublicKeyToken=32c39770e9a21a67, processorArchitecture=MSIL" />
+    <Reference Include="Boo.Lang.Compiler, Version=2.0.0.0, Culture=neutral, PublicKeyToken=32c39770e9a21a67, processorArchitecture=MSIL" />
+    <Reference Include="Boo.Lang.Interpreter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=32c39770e9a21a67, processorArchitecture=MSIL" />
+    <Reference Include="Boo.Lang.Parser, Version=2.0.0.0, Culture=neutral, PublicKeyToken=32c39770e9a21a67, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=5.2.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>.\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Menus\MenuClasses.cs" />
+    <Compile Include="Menus\MenuProxy.cs" />
+    <Compile Include="Menus\TileMenus.cs" />
+    <Compile Include="Misc\BMLObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\Broadcast.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\CaveTile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\CommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\ConsoleIO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\ItemTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\MineTile.cs" />
+    <Compile Include="Misc\NewPlayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\Tile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\TileCalculator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Misc\Timer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objects\Item.cs" />
+    <Compile Include="Objects\ActorBase.cs" />
+    <Compile Include="Objects\IDGenerator.cs" />
+    <Compile Include="Objects\NPCBase.cs" />
+    <Compile Include="Objects\ObjectBase.cs" />
+    <Compile Include="Objects\ObjectPool.cs" />
+    <Compile Include="Objects\Player.cs" />
+    <Compile Include="Objects\Structure.cs" />
+    <Compile Include="Objects\StructureNode.cs" />
+    <Compile Include="Objects\Wall.cs" />
+    <Compile Include="PacketHandlers\ChatHandler.cs" />
+    <None Include="woemu.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="PacketHandlers\LoginHandler.cs" />
+    <Compile Include="PacketHandlers\MoveItemsHandler.cs" />
+    <Compile Include="PacketHandlers\Movement.cs" />
+    <Compile Include="PacketHandlers\ObjectInfo.cs" />
+    <Compile Include="PacketHandlers\ObjectInteraction.cs" />
+    <Compile Include="PacketHandlers\StanceHandler.cs" />
+    <Compile Include="Packets\AddActor.cs" />
+    <Compile Include="Packets\Chat.cs" />
+    <Compile Include="Packets\Creature.cs" />
+    <Compile Include="Packets\GroundItem.cs" />
+    <Compile Include="Packets\GUI.cs" />
+    <Compile Include="Packets\InterfaceOptions.cs" />
+    <Compile Include="Packets\Inventory.cs" />
+    <Compile Include="Packets\PlayerStats.cs" />
+    <Compile Include="Packets\LoginFailed.cs" />
+    <Compile Include="Packets\Menu.cs" />
+    <Compile Include="Packets\ObjectParams.cs" />
+    <Compile Include="Packets\PlayerInformation.cs" />
+    <Compile Include="Packets\PopupMenu.cs" />
+    <Compile Include="Packets\ProgressBar.cs" />
+    <Compile Include="Packets\SendSkill.cs" />
+    <Compile Include="Packets\ServerShuttingDown.cs" />
+    <Compile Include="Packets\Sound.cs" />
+    <Compile Include="Packets\Sprite.cs" />
+    <Compile Include="Packets\StructurePacket.cs" />
+    <Compile Include="Packets\Stun.cs" />
+    <Compile Include="Packets\Teleport.cs" />
+    <Compile Include="Packets\TerrainPacket.cs" />
+    <Compile Include="Packets\Time.cs" />
+    <Compile Include="Packets\Trade.cs" />
+    <Compile Include="Packets\RemoveTool.cs" />
+    <Compile Include="Packets\UpdatePosition.cs" />
+    <Compile Include="Packets\WeildTool.cs" />
+    <Compile Include="Packets\Walls.cs" />
+    <Compile Include="Packets\Weather.cs" />
+    <Compile Include="Packets\EquipItem.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripting\Interface.cs" />
+    <Compile Include="SignalHandler.cs" />
+    <Compile Include="Terrain\HeightMapLoader.cs" />
+    <Compile Include="Terrain\ItemLoader.cs" />
+    <Compile Include="Terrain\Map.cs" />
+    <Compile Include="Terrain\MapSaver.cs" />
+    <Compile Include="Terrain\NPCLoader.cs" />
+    <Compile Include="Terrain\StructureLoader.cs" />
+    <Compile Include="Terrain\Terrain.cs" />
+    <Compile Include="Terrain\TileMapLoader.cs" />
+    <Compile Include="Terrain\WallLoader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WO.Core\WO.Core.csproj">
+      <Project>{45914557-ADDF-4F1D-9F40-ACF9BD966961}</Project>
+      <Name>WO.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Boo.Lang.Compiler.dll" />
+    <Content Include="Boo.Lang.dll" />
+    <Content Include="Boo.Lang.Interpreter.dll" />
+    <Content Include="Boo.Lang.Parser.dll" />
+    <Content Include="heightmap.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
